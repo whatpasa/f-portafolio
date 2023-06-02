@@ -1,0 +1,46 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    border: 2px solid rgb(45, 179, 33);
+    
+}
+#ball{
+    margin: 20px;
+    border-radius: 50%;
+    height: 140px;
+    width: 140px;
+    background-color: red;     
+    animation: movimiento 2s linear infinite;
+    position: relative;      
+}
+#ball:hover{
+    background-color: blueviolet;        
+}
+.button{
+    margin: 10px;
+    display: flex;
+}
+.btn:hover{
+    background-color: aqua;
+    color: black;
+}
+.btn{
+    background-color: rgb(153, 212, 161);
+    font-style: italic;
+    font-family: 'Milo', sans-serif;
+    color: rgb(110, 98, 71);
+    /* text-transform: uppercase; */
+    height: 30px;
+    font-variant: small-caps;
+}
+@keyframes movimiento {
+0% { 
+  left: calc(-200px)
+}
+100% {
+  left: calc(200px);
+}
+}

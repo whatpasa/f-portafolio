@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        border: 2px solid rgb(45, 179, 33);
+        
+    }
+    #ball{
+        margin: 20px;
+        border-radius: 50%;
+        height: 140px;
+        width: 140px;
+        background-color: red;     
+        animation: movimiento 2s linear infinite;
+        position: relative;      
+    }
+    #ball:hover{
+        background-color: blueviolet;        
+    }
+    .button{
+        margin: 10px;
+        display: flex;
+    }
+    .btn:hover{
+        background-color: aqua;
+        color: black;
+    }
+    .btn{
+        background-color: rgb(153, 212, 161);
+        font-style: italic;
+        font-family: 'Milo', sans-serif;
+        color: rgb(110, 98, 71);
+        /* text-transform: uppercase; */
+        height: 30px;
+        font-variant: small-caps;
+    }
+    @keyframes movimiento {
+    0% { 
+      left: calc(-200px)
+    }
+    100% {
+      left: calc(200px);
+    }
+  }
+
+    
+</style>
+<body>
+    <div class="container">
+        <br>
+        <div id="ball" > </div>
+        <br>
+        <div class="button">
+            <button  class="btn" id="play" >play</button>
+            <button  class="btn" id="pause">pause</button>
+            <button  class="btn" id="stop">stop</button>
+            <button  class="btn" id="reverse">reverse</button>
+          </div>          
+        <br>
+    </div>
+<script>
+
+    window.addEventListener('DOMContentLoaded', function() {
+    var ball = document.getElementById('ball');
+    var playBtn = document.getElementById('play');
+    var pauseBtn = document.getElementById('pause');
+    var stopBtn = document.getElementById('stop');
+    var reverseBtn = document.getElementById('reverse');
+    var animation;
+  
+    playBtn.addEventListener('click', function() {
+      ball.style.animationPlayState = 'running';
+    });
+  
+    pauseBtn.addEventListener('click', function() {
+      ball.style.animationPlayState = 'paused';
+    });
+  
+    stopBtn.addEventListener('click', function() {
+      ball.style.animation = 'none';
+      ball.offsetHeight; /* trigger reflow */
+      ball.style.animation = null;
+      ball.style.animationPlayState = 'paused'
+    });
+  
+    reverseBtn.addEventListener('click', function() {
+    if (ball.style.animationDirection === 'reverse') {
+        ball.style.animationDirection = 'normal';
+    }else {
+        ball.style.animationDirection = 'reverse';
+    }
+    
+    });
+  });
+  
+</script>
+
+
+</body>
+</html>
+    

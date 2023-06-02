@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.content-weeks2{
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(127, 126, 136);
+  margin: 0 auto;
+}
+#title-content{
+  padding-top:20px;
+  padding-bottom: 20px;
+  color: black;
+
+
+}
+.list-weeks{
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+#subtitle-content{
+  text-decoration: none;
+  color: white;
+
+}
+.emmet-cont{
+  margin: 20px;
+
+
+}
